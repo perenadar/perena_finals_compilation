@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folders with Actions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("BG.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            width: 50cm;
+            height: 45cm;
+            background-image: url("COMPILATION_BG3.jpg"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .folder {
+            width: 40%;
+            max-width: 400px; /* Adjust as needed */
+            height: 12cm;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            position: relative;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            border: 8px solid white; /* Added white border */
+        }
+
+        .folder:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .folder label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: rgb(122, 35, 122);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .folder-content {
+            display: none;
+            position: absolute;
+            font-family:'Times New Roman', Times, serif;
+            color: rgb(255, 255, 255);
+            font-size: 38px;
+            top: 105%;
+            left: 0;
+            width: 90%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15PX 15PX 15px 15px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .folder-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgb(240, 123, 240);
+            font-size: 30px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .folder-btn:hover {
+            background-color: rgb(122, 35, 122);
+        }
+
+        /* Add background images for each folder */
+        .folder:nth-child(1) {
+            background-image: url('RESUME.jpg');
+        }
+
+        .folder:nth-child(2) {
+            background-image: url('REGISTRATION.jpg');
+        }
+
+        .folder:nth-child(3) {
+            background-image: url('MENU.jpg');
+        }
+
+        .folder:nth-child(4) {
+            background-image: url('STORE.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="folder" onclick="toggleFolderContent(1)">
+            <button class="folder-btn" onclick="redirectTo('PERENA_BS_RESUME.html', event)">Open</button>
+            <label>RESUME</label>
+            <div class="folder-content">
+                A resume is a formal document that provides an overview of a person's professional qualifications, including their work experience, education, skills, and accomplishments. It is typically used when applying for jobs.<br><br>
+            </div>
+        </div>
+        <div class="folder" onclick="toggleFolderContent(2)">
+            <button class="folder-btn" onclick="redirectTo('PERENA_REG_FORM.html', event)">Open</button>
+            <label>FORM</label>
+            <div class="folder-content">
+                A registration form is a document or digital interface used to collect information from individuals for the purpose of enrolling them in a service, event, or system. It typically gathers personal and contact details.<br><br>
+            </div>
+        </div>
+        <div class="folder" onclick="toggleFolderContent(3)">
+            <button class="folder-btn" onclick="redirectTo('PERENA_RESTO_BUTTON.html', event)">Open</button>
+            <label>MENU</label>
+            <div class="folder-content">
+                A restaurant menu is a comprehensive list of food and beverage offerings available for customers at a restaurant. It serves as a key communication tool between the restaurant and its patrons, providing details about the dishes.<br>
+            </div>
+        </div>
+        <div class="folder" onclick="toggleFolderContent(4)">
+            <button class="folder-btn" onclick="redirectTo('PERENA_SARI-SARI_STORE.html', event)">Open</button>
+            <label>STORE</label>
+            <div class="folder-content">
+                An online shop, also known as an e-commerce store, is a website or digital platform where consumers can browse, select, and purchase products or services over the internet.<br><br><br><br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFolderContent(folderNum) {
+            const folderContent = document.querySelector(`.folder:nth-child(${folderNum}) .folder-content`);
+            folderContent.style.display = (folderContent.style.display === "block") ? "none" : "block";
+        }
+
+        function redirectTo(url, event) {
+            event.stopPropagation(); 
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

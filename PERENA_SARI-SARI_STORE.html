@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Header</title>
+<style>
+  /* CSS styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove margin space from both sides of the body */
+    padding: 0;
+    background-image: url('BODYBG.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  header {
+    background-color: plum;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  nav {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 16px; 
+    transition: color 0.3s ease; 
+  }
+
+  nav a:hover {
+    color: purple; 
+  }
+
+  .add-to-cart {
+    margin-right: 20px;
+    cursor: pointer; 
+  
+    
+  }
+  
+
+  .about-section {
+    text-align: center;
+    padding: 0px 0;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-image img {
+    border-radius: 10px; 
+    transition: transform 0.3s ease; 
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Preserve aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+  }
+
+  .about-image img:hover {
+    transform: scale(1.1); 
+  }
+
+  .about-text {
+    margin-top: 20px;
+    color: whitesmoke; 
+    font-family: Monotype Corsiva; 
+    font-size: 30px; 
+    text-align: center;
+  }
+
+  .line-separator {
+    border-top: 5px groove plum;
+    margin: 20px 0;
+  }
+
+  .product-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%; /* Make container width 100% */
+    display: flex;
+    gap: 20px; /* Adjust spacing between product containers */
+    justify-content: center; /* Center the items horizontally */
+  }
+
+  .product-item {
+    padding: 10px;
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 200px; /* Adjust width of each container */
+    
+  }
+
+  .product-image {
+    width: 90%; /* Make the image fill its container */
+    height: 250px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+    border-radius: 50%; /* Rounded corners */
+    border: 5px solid rgb(3, 84, 134);
+  }
+
+  .product-details {
+    color: rgb(3, 84, 134);;
+  }
+
+  .quantity-button {
+    background-color: transparent;
+    color: rgb(3, 84, 134);
+    border: 1px solid rgb(3, 84, 134);
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  .quantity-button:hover {
+    background-color: rgb(3, 84, 134);
+    color: black;
+  }
+
+  h2{
+    font-family: Monotype Corsiva;
+    color: rgb(3, 84, 134);
+  }
+  p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(3, 84, 134);
+  }
+  .add-to-cart-btn{
+    color: rgb(3, 84, 134);
+    font-weight: bold;
+  }
+  .shopping-cart {
+    position: fixed;
+    top: 60px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    background-color: plum;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    max-height: 500px;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .shopping-cart.open {
+    display: block;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+  .cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .cart-item .cancel-btn {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  .total-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .total-section button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .total-section .checkout-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .total-section .cancel-btn {
+    background-color: #ff5252;
+    color: white;
+  }
+  .product-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .product-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="LOGO.png" alt="Logo" width="100">
+  </div>
+  
+  <nav>
+    <a href="ABOUT.html" id="aboutBtn">ABOUT</a>
+    <a href="PERENA_SARI-SARI_STORE.html" id="productsBtn">PRODUCTS</a>
+    <a href="CUSTOMER SERVICE.html" id="customerServiceBtn">CUSTOMER SERVICE</a>
+    <a href="STOCKS.html" id="stocksBtn">STOCKS</a>
+  </nav>
+
+  <div class="add-to-cart" id="cartIcon" onclick="toggleShoppingCart()">
+    <img src="CART.png" alt="Add to Cart" width="40">
+    <span id="cartItemCount">0</span> 
+  </div>
+  <div class="shopping-cart" id="shoppingCart">
+    <h2>Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <div class="total-section">
+      <p>Total: ₱<span id="totalAmount">0.00</span></p>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+      <button class="cancel-btn" onclick="cancel()">Cancel</button>
+    </div>
+  </div>
+</header>
+
+<div class="about-section">
+  <img class="about-image" src="PRODUCTS_BG.JPG" alt="Rectangle Image">
+  <div class="about-text">
+    <p style="color: whitesmoke;font-family: Monotype Corsiva;">" Dar Cosmetics products are inspired by fairy tales and art pieces,<br>
+      designed with delicate details, and created with love,<br>
+       hoping to romanticize the world with our unique aesthetics."</p>
+  </div>
+</div>
+
+<div class="line-separator"></div>
+<h1 style="color: rgb(3, 84, 134);font-family: Monotype Corsiva;font-size: 30px;text-align: center;">Little Angel Eyeshadow Palette</h1>
+<div class="product-container">
+  <div class="product-item">
+    <img class="product-image" src="EYESHADOW_PALETTE_02.JPG" alt="Product 1">
+    <div class="product-details">
+      <h2>Celestial Castle</h2>
+      <p> ₱500.00</p>
+      <p>Stocks: <span id="product1Stocks">100</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product1')">-</button>
+      <span id="product1Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product1')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product1', 'Celestial Castle', 500)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="EYESHADOW_PALETTE_03.JPG" alt="Product 2">
+    <div class="product-details">
+      <h2>Ocean Siren</h2>
+      <p>₱450.00</p>
+      <p>Stocks: <span id="product2Stocks">80</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product2')">-</button>
+      <span id="product2Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product2')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product2', 'Ocean Siren', 450)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="EYESHADOW_PALETTE_04.JPG" alt="Product 3">
+    <div class="product-details">
+      <h2>Mermaids Dream</h2>
+      <p>₱480.00</p>
+      <p>Stocks: <span id="product3Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product3')">-</button>
+      <span id="product3Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product3')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product3', 'Mermaids Dream', 480)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="EYESHADOW_PALETTE_05.JPG" alt="Product 4">
+    <div class="product-details">
+      <h2>Moonlight Land</h2>
+      <p>₱499.00</p>
+      <p>Stocks: <span id="product4Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product4')">-</button>
+      <span id="product4Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product4')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product4', 'Moonlight Land', 499)">Add to Cart</button>
+    </div>
+  </div>
+ </div> 
+ <div class="line-separator"></div>
+<h1 style="color: rgb(3, 84, 134);font-family: Monotype Corsiva;font-size: 30px;text-align: center;">Moonlight Mermaid Jewelry Blush</h1>
+<div class="product-container">
+  <div class="product-item">
+    <img class="product-image" src="BLUSH_01.JPG" alt="Product 5">
+    <div class="product-details">
+      <h2>Snow Goddess</h2>
+      <p> ₱300.00</p>
+      <p>Stocks: <span id="product5Stocks">100</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product5')">-</button>
+      <span id="product5Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product5')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product5', 'Snow Goddess', 300)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="BLUSH_02.JPG" alt="Product 6">
+    <div class="product-details">
+      <h2>Moonlight Dawn</h2>
+      <p>₱250.00</p>
+      <p>Stocks: <span id="product6Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product6')">-</button>
+      <span id="product6Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product6')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product6', 'Moonlight Dawn', 250)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="BLUSH_03.JPG" alt="Product 7">
+    <div class="product-details">
+      <h2>Coral Jellyfish</h2>
+      <p>₱280.00</p>
+      <p>Stocks: <span id="product7Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product7')">-</button>
+      <span id="product7Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product7')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product7', 'Coral Jellyfish', 280)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="BLUSH_04.JPG" alt="Product 8">
+    <div class="product-details">
+      <h2>Starmoon Tale</h2>
+      <p>₱350.00</p>
+      <p>Stocks: <span id="product8Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product8')">-</button>
+      <span id="product8Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product8')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product8', 'Starmoon Tale', 350)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="line-separator"></div>
+<h1 style="color: rgb(3, 84, 134);font-family: Monotype Corsiva;font-size: 30px;text-align: center;">MChocolate Wonder-Shop Matte Lipstick</h1>
+<div class="product-container">
+  <div class="product-item">
+    <img class="product-image" src="MATTE_LIPSTICK_01.JPG" alt="Product 9">
+    <div class="product-details">
+      <h2>Starry Gross</h2>
+      <p> ₱199.00</p>
+      <p>Stocks: <span id="product9Stocks">100</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product9')">-</button>
+      <span id="product9Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product9')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product9', 'Starry Gross', 199)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="MATTE_LIPSTICK_02.JPG" alt="Product 10">
+    <div class="product-details">
+      <h2>Fantasia</h2>
+      <p>₱199.00</p>
+      <p>Stocks: <span id="product10Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product10')">-</button>
+      <span id="product10Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product10')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product10', 'Fantasia', 199)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="MATTE_LIPSTICK_03.JPG" alt="Product 11">
+    <div class="product-details">
+      <h2>Golden Wheat</h2>
+      <p>₱199.00</p>
+      <p>Stocks: <span id="product11Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product11')">-</button>
+      <span id="product11Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product11')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product3', 'Golden Wheat', 199)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="MATTE_LIPSTICK_04.JPG" alt="Product 12">
+    <div class="product-details">
+      <h2>Dark Angel</h2>
+      <p>₱199.00</p>
+      <p>Stocks: <span id="product12Stocks">60</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product12')">-</button>
+      <span id="product12Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product12')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product12', 'Dark Angel', 199)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="line-separator"></div>
+<h1 style="color: rgb(3, 84, 134);font-family: Monotype Corsiva;font-size: 30px;text-align: center;">Swan Ballet Perfume</h1>
+<div class="product-container">
+  <div class="product-item">
+    <img class="product-image" src="PERFUME_01.JPG" alt="Product 13">
+    <div class="product-details">
+      <h2>Ribbon Ballet</h2>
+      <p> ₱700.00</p>
+      <p>Stocks: <span id="product13Stocks">80</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product13')">-</button>
+      <span id="product13Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product13')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product13', 'Ribbon Ballet', 700)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="PERFUME_02.JPG" alt="Product 14">
+    <div class="product-details">
+      <h2>Forever Blooming Flowern</h2>
+      <p>₱650.00</p>
+      <p>Stocks: <span id="product14Stocks">70</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product14')">-</button>
+      <span id="product14Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product14')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product14', 'Forever Blooming Flower', 650)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="PERFUME_03.JPG" alt="Product 15">
+    <div class="product-details">
+      <h2>Alice Flower Tea</h2>
+      <p>₱500.00</p>
+      <p>Stocks: <span id="product15Stocks">50</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product15')">-</button>
+      <span id="product15Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product15')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product15', 'Alice Flower Tea', 500)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="PERFUME_04.JPG" alt="Product 16">
+    <div class="product-details">
+      <h2>Unicorn Ballet</h2>
+      <p>₱499.00</p>
+      <p>Stocks: <span id="product16Stocks">50</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product16')">-</button>
+      <span id="product16Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product16')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product16', 'Unicorn Ballet', 499)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="line-separator"></div>
+<h1 style="color: rgb(3, 84, 134);font-family: Monotype Corsiva;font-size: 30px;text-align: center;">Strawberry-Rococo Make up Sets</h1>
+<div class="product-container">
+  <div class="product-item">
+    <img class="product-image" src="SET_A.JPG" alt="Product 17">
+    <div class="product-details">
+      <h2>Rapunzel Set</h2>
+      <p> ₱1599.00</p>
+      <p>Stocks: <span id="product17Stocks">30</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product17')">-</button>
+      <span id="product17Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product17')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product17', 'Rapunzel Set', 1599)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="SET_B.JPG" alt="Product 18">
+    <div class="product-details">
+      <h2>Aurora Set</h2>
+      <p>₱1799.00</p>
+      <p>Stocks: <span id="product18Stocks">25</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product18')">-</button>
+      <span id="product18Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product18')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product18', 'Aurora Set', 1799)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="SET_C.JPG" alt="Product 19">
+    <div class="product-details">
+      <h2>Belle Set</h2>
+      <p>₱1999.00</p>
+      <p>Stocks: <span id="product19Stocks">15</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product19')">-</button>
+      <span id="product19Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product19')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product19', 'Belle Set', 1999)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="product-item">
+    <img class="product-image" src="SET_D.JPG" alt="Product 20">
+    <div class="product-details">
+      <h2>SJasmine Set</h2>
+      <p>₱1899.00</p>
+      <p>Stocks: <span id="product20Stocks">20</span></p>
+      <button class="quantity-button" onclick="decreaseQuantity('product20')">-</button>
+      <span id="product20Quantity">1</span>
+      <button class="quantity-button" onclick="increaseQuantity('product20')">+</button>
+      <br>
+      <button class="add-to-cart-btn" onclick="addToCart('product20', 'Jasmine Set', 1899)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+ 
+
+<script>
+  var cartItemCount = 0;
+  var totalAmount = 0;
+
+  function toggleShoppingCart() {
+    var cart = document.getElementById('shoppingCart');
+    cart.classList.toggle('open');
+    
+    if (cart.classList.contains('open')) {
+        // Add discount dropdown
+        var discountDropdown = document.createElement('select');
+        discountDropdown.id = 'discountDropdown';
+        
+        // Add options for discounts
+        var noDiscountOption = document.createElement('option');
+        noDiscountOption.text = 'No Discount';
+        noDiscountOption.value = 0;
+        
+        var seniorOption = document.createElement('option');
+        seniorOption.text = 'Senior Citizen (20%)';
+        seniorOption.value = 0.2;
+        
+        var pwdOption = document.createElement('option');
+        pwdOption.text = 'PWD (30%)';
+        pwdOption.value = 0.3;
+        
+        var studentOption = document.createElement('option');
+        studentOption.text = 'Student (10%)';
+        studentOption.value = 0.1;
+        
+        discountDropdown.add(noDiscountOption);
+        discountDropdown.add(seniorOption);
+        discountDropdown.add(pwdOption);
+        discountDropdown.add(studentOption);
+        
+        // Add discount button
+        var applyDiscountButton = document.createElement('button');
+        applyDiscountButton.innerText = 'Apply Discount';
+        applyDiscountButton.onclick = applyDiscount;
+        
+        // Container for displaying discounted price label
+        var discountedPriceLabel = document.createElement('div');
+        discountedPriceLabel.id = 'discountedPriceLabel';
+        
+        // Add payment input
+        var paymentInput = document.createElement('input');
+        paymentInput.type = 'number';
+        paymentInput.placeholder = 'Enter Amount';
+        paymentInput.id = 'paymentInput';
+        
+        // Add change button
+        var changeButton = document.createElement('button');
+        changeButton.innerText = 'Change';
+        changeButton.onclick = calculateChange;
+        
+        // Container for displaying change amount
+        var changeContainer = document.createElement('div');
+        changeContainer.id = 'changeContainer';
+        
+        // Append discount dropdown, apply discount button, discounted price label, payment input, change button, and change container to shopping cart
+        cart.appendChild(discountDropdown);
+        cart.appendChild(applyDiscountButton);
+        cart.appendChild(discountedPriceLabel);
+        cart.appendChild(paymentInput);
+        cart.appendChild(changeButton);
+        cart.appendChild(changeContainer);
+    } else {
+        // Clear added elements when cart is closed
+        var elementsToRemove = document.querySelectorAll('#discountDropdown, button, #discountedPriceLabel, #paymentInput, #changeContainer');
+        elementsToRemove.forEach(function(element) {
+            element.remove();
+        });
+    }
+}
+
+function applyDiscount() {
+    var selectedDiscount = parseFloat(document.getElementById('discountDropdown').value);
+    var discountedPrice = totalAmount * (1 - selectedDiscount); // Calculate discounted price
+    document.getElementById('discountedPriceLabel').innerText = 'Discounted Price: ₱' + discountedPrice.toFixed(2);
+    discountedPriceLabel.style.color = 'rgb(3, 84, 134)';
+  }
+
+
+function calculateChange() {
+    var paymentAmount = parseFloat(document.getElementById('paymentInput').value);
+    var discountedPrice = parseFloat(document.getElementById('discountedPriceLabel').innerText.split('₱')[1]); // Extract discounted price from label
+    var change = paymentAmount - discountedPrice;
+    var changeContainer = document.getElementById('changeContainer');
+    changeContainer.innerText = 'Change: ₱' + change.toFixed(2);
+    changeContainer.style.color = 'rgb(3, 84, 134)';
+}
+
+  function decreaseQuantity(productId) {
+    var quantityElement = document.getElementById(productId + 'Quantity');
+    var currentQuantity = parseInt(quantityElement.innerText);
+    if (currentQuantity > 1) {
+      quantityElement.innerText = currentQuantity - 1;
+    }
+  }
+
+  function increaseQuantity(productId) {
+    var quantityElement = document.getElementById(productId + 'Quantity');
+    var currentQuantity = parseInt(quantityElement.innerText);
+    quantityElement.innerText = currentQuantity + 1;
+  }
+
+  function addToCart(productId, productName, price) {
+    var stocksElement = document.getElementById(productId + 'Stocks');
+    var currentStocks = parseInt(stocksElement.innerText);
+    var quantityElement = document.getElementById(productId + 'Quantity');
+    var currentQuantity = parseInt(quantityElement.innerText);
+     
+    if (currentStocks >= currentQuantity) {
+      stocksElement.innerText = currentStocks - currentQuantity;
+      cartItemCount += currentQuantity;
+      document.getElementById('cartItemCount').innerText = cartItemCount;
+
+      var itemTotal = currentQuantity * price;
+      totalAmount += itemTotal;
+      document.getElementById('totalAmount').innerText = '' + totalAmount.toFixed(2);
+      
+      var cartItems = document.getElementById('cartItems');
+      var newItem = document.createElement('div');
+      newItem.classList.add('cart-item');
+      newItem.innerHTML = `
+        <span>Name: ${productName}</span>
+        <span>Quantity: ${currentQuantity}</span>
+        <span>Price: ₱${price.toFixed(2)}</span>
+        <span>Total: ₱${itemTotal.toFixed(2)}</span>
+        <button class="cancel-btn" onclick="removeFromCart('${productId}', ${currentQuantity}, ${price})">Cancel</button>
+      `;
+      cartItems.appendChild(newItem);
+      
+      alert('Added ' + currentQuantity + ' ' + productName + ' to cart!');
+    } else {
+      alert('Not enough stocks for ' + productName + '!');
+    }
+  }
+  function removeFromCart(productId, quantity, price) {
+    var stocksElement = document.getElementById(productId + 'Stocks');
+    var currentStocks = parseInt(stocksElement.innerText);
+    
+    stocksElement.innerText = currentStocks + quantity;
+    
+    cartItemCount -= quantity;
+    document.getElementById('cartItemCount').innerText = cartItemCount;
+    
+    var itemTotal = quantity * price;
+    totalAmount -= itemTotal;
+    document.getElementById('totalAmount').innerText = '' + totalAmount.toFixed(2);
+    
+    var cartItems = document.getElementById('cartItems');
+    var items = cartItems.getElementsByClassName('cart-item');
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      // Check if the item's innerHTML contains the productId
+      if (item.innerHTML.includes(productId)) {
+        item.remove();
+        break;
+      }
+    }
+}
+
+
+  function checkout() {
+    alert('Checkout confirmed!');
+    // Here you can add code to redirect to the checkout page
+  }
+function cancel() {
+  cart.forEach(item => {
+    const productStocks = document.getElementById(`${item.id}Stocks`);
+    productStocks.textContent = parseInt(productStocks.textContent) + item.quantity;
+  });
+  cart = [];
+  renderCart();
+  updateTotal();
+  cartItemCount.textContent = 0;
+}
+
+  function cancel() {
+    var cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = ''; // Clear the cart items
+    cartItemCount = 0;
+    totalAmount = 0;
+    document.getElementById('cartItemCount').innerText = cartItemCount;
+    document.getElementById('totalAmount').innerText = '₱' + totalAmount.toFixed(2);
+    var stocksElements = document.querySelectorAll('.stocks');
+    stocksElements.forEach(function(element) {
+      element.innerText = '10'; // Reset stock counts
+    });
+    toggleShoppingCart(); // Close the cart
+  }
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+
+// Update stock count in other pages
+window.addEventListener('load', function() {
+  const productStockElements = document.querySelectorAll('.product-stock');
+  productStockElements.forEach(stockElement => {
+    const productId = parseInt(stockElement.dataset.productId);
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      stockElement.textContent = product.stock;
+    }
+  });
+});
+  
+  
+</script>
+<div class="line-separator"></div>
+
+</body>
+</html>

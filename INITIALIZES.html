@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initialize Products</title>
+</head>
+<body>
+    <script>
+        const initialProducts = [
+            { id: 1, name: 'Celestial Castle', stock: 100, price: 500 },
+            { id: 2, name: 'Ocean Siren', stock: 80, price: 450 },
+            { id: 3, name: 'Mermaids Dream', stock: 60, price: 480 },
+            { id: 4, name: 'Moonlight Land', stock: 60, price: 499 },
+            { id: 5, name: 'Snow Goddess', stock: 100, price: 300 },
+            { id: 6, name: 'Moonlight Dawn', stock: 60, price: 250 },
+            { id: 7, name: 'Coral Jellyfish', stock: 60, price: 280 },
+            { id: 8, name: 'Starmoon Tale', stock: 60, price: 350 },
+            { id: 9, name: 'Starry Gross', stock: 100, price: 199 },
+            { id: 10, name: 'Fantasia', stock: 60, price: 199 },
+            { id: 11, name: 'Golden Wheat', stock: 60, price: 199 },
+            { id: 12, name: 'Dark Angel', stock: 60, price: 199 },
+            { id: 13, name: 'Ribbon Ballet', stock: 80, price: 700 },
+            { id: 14, name: 'Forever Blooming Flower', stock: 70, price: 650 },
+            { id: 15, name: 'Alice Flower Tea', stock: 50, price: 500 },
+            { id: 16, name: 'Unicorn Ballet', stock: 50, price: 499 },
+            { id: 17, name: 'Rapunzel Set', stock: 30, price: 1599 },
+            { id: 18, name: 'Aurora Set', stock: 25, price: 1799 },
+            { id: 19, name: 'Belle Set', stock: 15, price: 1999 },
+            { id: 20, name: 'Jasmine Set', stock: 20, price: 1899 }
+        ];
+        localStorage.setItem('products', JSON.stringify(initialProducts));
+        window.location.href = 'PERENA_SARI-SARI_STORE.html'; // Make sure this matches your actual filename
+    </script>
+</body>
+</html>

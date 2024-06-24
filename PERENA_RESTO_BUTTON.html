@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Restaurant Menu</title>
+</head>
+<body>
+    <div class="container">
+        <h1><i>7twenty7 Diner</i></h1>
+		<h2><center>MENU</center></h2>
+        <form id="orderForm">
+            <div class="menu-item">
+                <h2>Main Dish</h2>
+                <div>
+                    <input type="checkbox" name="item" value="395" data-name="Signature Cheeseburger">
+                    <img src="Signature Cheeseburger.jpg" alt="Signature Cheeseburger">
+                    <p>Signature<br>Cheeseburger</p>
+                    <p class="price">₱395</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="365" data-name="Shrimp Pasta">
+                    <img src="Shrimp Pasta.jpg" alt="Shrimp Pasta">
+                    <p>Shrimp Pasta</p>
+                    <p class="price">₱365</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="968" data-name="Wings Platter">
+                    <img src="Wings Platter.jpg" alt="Wings Platter">
+                    <p>Wings Platter</p>
+                    <p class="price">₱968</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="365" data-name="Hungry Man's Breakfast">
+                    <img src="Hungry Man's Breakfast.jpg" alt="Hungry Man's Breakfast">
+                    <p>Hungry Man's <br>Breakfast</p>
+                    <p class="price">₱365</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="520" data-name="Steak and Eggs">
+                    <img src="Steak and Eggs.jpg" alt="Steak and Eggs">
+                    <p>Steak and Eggs</p>
+                    <p class="price">₱520</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h2>Vegetables</h2>
+                <div>
+                    <input type="checkbox" name="item" value="250" data-name="Caesar Salad">
+                    <img src="Caesar Salad.jpg" alt="Caesar Salad">
+                    <p>Caesar Salad</p>
+                    <p class="price">₱250</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="269" data-name="All American Cob Salad">
+                    <img src="All American Cob Salad.jpg" alt="All American Cob Salad">
+                    <p>All American <br>Cob Salad</p>
+                    <p class="price">₱269</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="255" data-name="Taco Salad">
+                    <img src="Taco Salad.jpg" alt="Taco Salad">
+                    <p>Taco Salad</p>
+                    <p class="price">₱255</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h2>Desserts</h2>
+                <div>
+                    <input type="checkbox" name="item" value="255" data-name="New York Cheesecake">
+                    <img src="New York Cheesecake.jpg" alt="New York Cheesecake">
+                    <p>New York Cheesecake</p>
+                    <p class="price">₱255</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="165" data-name="Chocolate Seduction">
+                    <img src="Chocolate Seduction.jpg" alt="Chocolate Seduction">
+                    <p>Chocolate Seduction</p>
+                    <p class="price">₱165</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="225" data-name="Blueberry Pancake">
+                    <img src="Blueberry Pancake.jpg" alt="Blueberry Pancake">
+                    <p>Blueberry Pancake</p>
+                    <p class="price">₱225</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h2>Drinks</h2>
+                <div>
+                    <input type="checkbox" name="item" value="175" data-name="Vanilla Milkshake">
+                    <img src="Milkshake.jpg" alt="Milkshake">
+                    <p>Vanilla Milkshake</p>
+                    <p class="price">₱175</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="100" data-name="Caramel Machiatto">
+                    <img src="Iced Coffee Latte.jpg" alt="Iced Coffee Latte">
+                    <p>Caramel Machiatto</p>
+                    <p class="price">₱100</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="150" data-name="Chocolate Frappe">
+                    <img src="Frappe.jpg" alt="Frappe">
+                    <p>Chocolate Frappe</p>
+                    <p class="price">₱150</p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+            </div>
+            <div class="menu-item">
+                <h2>Add Ons</h2>
+                <div>
+                    <input type="checkbox" name="item" value="20" data-name="Sweet Sauce">
+                    <p>Sweet Sauce <span class="price">₱20</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="20" data-name="Hot Sauce">
+                    <p>Hot Sauce <span class="price">₱20</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="30" data-name="Garlic Mayo">
+                    <p>Garlic Mayo <span class="price">₱30</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="30" data-name="Melted Cheese">
+                    <p>Melted Cheese <span class="price">₱30</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="20" data-name="Onion">
+                    <p>Onion <span class="price">₱20</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="30" data-name="Pickles">
+                    <p>Pickles <span class="price">₱30</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="50" data-name="Fries">
+                    <p>Fries <span class="price">₱50</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="60" data-name="Nachos">
+                    <p>Nachos <span class="price">₱60</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="25" data-name="Plain Rice">
+                    <p>Plain Rice <span class="price">₱25</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="30" data-name="Java Rice">
+                    <p>Java Rice <span class="price">₱30</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="70" data-name="Iced tea">
+                    <p>Iced tea <span class="price">₱70</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+                <div>
+                    <input type="checkbox" name="item" value="80" data-name="Pineapple Juice">
+                    <p>Pineapple Juice <span class="price">₱80</span></p>
+                    <input type="number" min="0" class="quantity" value="0">
+                </div>
+            </div>
+        </form>
+        <button id="calculateTotal">Calculate Total</button>
+        <p id="totalPrice">Total Price: ₱0</p>
+        <div id="receipt"></div>
+        <div>
+            <label for="paymentAmount">Enter Payment Amount: </label>
+            <input type="number" id="paymentAmount" min="0" value="0">
+            <button id="calculateChange">Calculate Change</button>
+        </div>
+        <p id="changeAmount">Change: ₱0</p>
+    </div>
+
+    <script>
+        document.getElementById("calculateTotal").addEventListener("click", function() {
+            var form = document.getElementById("orderForm");
+            var checkboxes = form.querySelectorAll('input[type="checkbox"]');
+            var totalPrice = 0;
+            var receipt = document.getElementById("receipt");
+            receipt.innerHTML = '<h2>Receipt</h2><ul>';
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    var price = parseFloat(checkbox.value);
+                    var quantity = parseInt(checkbox.parentNode.querySelector('.quantity').value);
+                    var itemName = checkbox.dataset.name;
+                    var itemTotal = price * quantity;
+                    totalPrice += itemTotal;
+                    receipt.innerHTML += `<li>${itemName} - ₱${price} x ${quantity} = ₱${itemTotal.toFixed(2)}</li>`;
+                }
+            });
+            receipt.innerHTML += '</ul>';
+            document.getElementById("totalPrice").innerText = "Total Price: ₱" + totalPrice.toFixed(2);
+        });
+
+        document.getElementById("calculateChange").addEventListener("click", function() {
+            var totalPrice = parseFloat(document.getElementById("totalPrice").innerText.replace('Total Price: ₱', ''));
+            var paymentAmount = parseFloat(document.getElementById("paymentAmount").value);
+            var change = paymentAmount - totalPrice;
+            document.getElementById("changeAmount").innerText = "Change: ₱" + change.toFixed(2);
+        });
+    </script>
+    <style>
+       body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("Menu bg2.jpeg");
+            color: goldenrod;
+        }
+        .container {
+            max-width: 800px;
+            max-height: fit-content;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: black; 
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+			font-family:'Monotype Corsiva';
+			font-size: 50px;
+            color: goldenrod;
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            margin-bottom: 30px;
+        }
+        .menu-item h2 {
+            font-size: 35px;
+			font-family:'Monotype Corsiva';
+            color: goldenrod;
+            border-bottom: 3px solid white;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            
+        }
+        .menu-item div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .menu-item img {
+            width: 250px;
+            height: 160px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 0.20cm groove red;
+            object-fit: cover;
+            margin-right: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item p {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .price {
+            font-weight: bold;
+            color: whitesmoke;
+        }
+        #calculateTotal, #calculateChange {
+            background-color: goldenrod;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #calculateTotal:hover, #calculateChange:hover {
+            background-color: darkgoldenrod;
+        }
+        #receipt h2 {
+            font-size: 25px;
+            color: goldenrod;
+            margin-top: 20px;
+        }
+        #receipt ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #receipt li {
+            font-size: 18px;
+            color: whitesmoke;
+        }
+        #changeAmount {
+            font-size: 20px;
+            color: whitesmoke;
+            margin-top: 10px;
+        }
+    </style>
+</body>
+</html>
